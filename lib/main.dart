@@ -41,13 +41,28 @@ class RandomWordsState extends State<RandomWords> {
 
   //在 Dart 语言中使用 _下划线开头，会强制变成私有的
       final _suggestions = <WordPair>[];
+      final _saved = new Set<WordPair>();
       final _biggerFont = const TextStyle(fontSize: 18.0);
       Widget _buildRow(WordPair pair) {
+        final alreadySaved = _saved.contains(pair);
         return new ListTile(
           title: new Text(
             pair.asPascalCase,
             style: _biggerFont,
           ),
+          trailing: new Icon(
+            alreadySaved ? Icons.favorite : Icons.favorite_border,
+            color: alreadySaved ? Colors.red : null,
+          ),
+          onTap: (){
+            setState(() {
+              if(alreadySaved) {
+                _saved.remove(pair);
+              }else {
+                _saved.add(pair);
+              }
+            });
+          },
         );
       }
       Widget _buildSuggestions() {
