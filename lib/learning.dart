@@ -66,10 +66,92 @@ main() {
   };
 
   //dart 没有关键字来定义接口，默认是所有类都是隐式接口
-  
+
+
+  //位置参数，按顺序
+  sayHello2("");
+  sayHello2("", 0, 2.0);
+
+  //命名可选参数，可不按顺序
+  sayHelllo3("", age: 0, heght: 2);
+}
+
+//返回的类型是可以省略（不推荐）
+sum1(int num1, int num2) {
+  return num1 + num2;
+}
+
+int sum(int num1, int num2) {
+  return num1 + num2;
+}
+
+//dart 没有函数重载
+//必选参数，必须传
+void sayHello(String name) {
+  print(name);
+}
+//可选参数
+//只有可选参数可以有默认值
+//1.位置可选参数
+
+void sayHello2(String name, [int age, double height]) {
 
 }
 
+void sayHello21(String name, [int age = 10, double height = 3.14]) {
+
+}
+
+//2.命名可选参数
+void sayHelllo3(String name, {int age, int heght}) {
+
+}
+
+//函数可以作为另一个名字的参数
+
+void main2() {
+  //匿名函数
+  test((){
+    //
+    print("");
+    return 10;
+  });
+
+  //箭头函数,函数体只有一行代码
+  test(()=>print(""));
+
+  //指定参数
+  test2((num1, num2) {
+    return num2+num1;
+  });
+}
+//不好阅读,对函数没有任何限制
+void test(Function  foo) {
+  void result = foo();
+}
+//不好阅读
+void test2(int foo(int num1,int num2)) {
+
+}
+
+void bar() {
+  print("bar 函数被调用");
+}
+
+//采用这种方式
+typedef Calculate  = int Function(int num1,int num2);
+
+void test3(Calculate calculate) {
+  calculate(1,2);
+}
+
+
+//函数可以作为返回值
+Calculate demo() {
+  return (num1,num2){
+    return num1 + num2;
+  };
+}
 class Person {
   String name;
 
