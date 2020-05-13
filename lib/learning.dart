@@ -31,6 +31,27 @@ main() {
   print(identical(p4, p5));//true
   print(identical(p4, p6));//false
 
+
+  //定义字符串
+  var  str1 = 'abc';
+  var str2 = "abc";
+  var str3 = """
+  abc
+  abc
+  abc
+  """;
+
+  //2字符串和表达式拼接
+  var name = "why";
+  var age = 19;
+  var height = 1.88;
+
+
+  //强调 ${}  大括号可以省略
+  var message1 = "my name is${name}, age is ${age}";
+  var message2 = "name is ${name} , type is ${name.runtimeType}";
+
+
 }
 
 class Person {
