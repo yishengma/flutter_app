@@ -52,6 +52,22 @@ main() {
   var message2 = "name is ${name} , type is ${name.runtimeType}";
 
 
+  //集合
+  //1.列表List
+  var names = ["","",""];
+  names.remove("");
+  //2.集合Set
+  var movices = {"","",""};
+  movices.add("");
+  //3.映射
+  var info = {
+    "":"",
+    "":19,
+  };
+
+  //dart 没有关键字来定义接口，默认是所有类都是隐式接口
+  
+
 }
 
 class Person {
