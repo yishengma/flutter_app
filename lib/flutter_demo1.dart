@@ -51,16 +51,26 @@ class NewHomeProductItem extends StatelessWidget {
 
   NewHomeProductItem(this.title, this.desc, this.imageURL);
 
+  //alt+enter 快捷键 包裹 container
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text(title,style: style),
-        SizedBox(height: 8),
-        Text(desc,style: style1),
-        SizedBox(height: 8),
-        Image.network(imageURL)
-      ],
+    return Container(
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 5,//设置边框
+          color: Colors.black12
+        )
+      ),
+      child: Column(
+        children: <Widget>[
+          Text(title,style: style),
+          SizedBox(height: 8),
+          Text(desc,style: style1),
+          SizedBox(height: 8),
+          Image.network(imageURL)
+        ],
+      ),
     );
   }
 }
