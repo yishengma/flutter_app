@@ -19,7 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-
+#在这里添加一个库，然后执行 pub get 方式下载， Flutter package get
 dependencies:
   flutter:
     sdk: flutter
