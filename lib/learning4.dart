@@ -52,4 +52,12 @@ class Person3 {
 
 
 
+
+   set setName(String name) {
+     this.name = name;
+   }
+
+   String get getName{
+     return name;
+   }
 }
