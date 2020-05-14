@@ -46,6 +46,8 @@ class NewHomeProductItem extends StatelessWidget {
   final String desc;
   final String imageURL;
 
+  final style = TextStyle(fontSize: 20,color: Colors.green);
+  final style1 = TextStyle(fontSize: 25,color: Colors.orange);
 
   NewHomeProductItem(this.title, this.desc, this.imageURL);
 
@@ -53,8 +55,10 @@ class NewHomeProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text(title),
-        Text(desc),
+        Text(title,style: style),
+        SizedBox(height: 8),
+        Text(desc,style: style1),
+        SizedBox(height: 8),
         Image.network(imageURL)
       ],
     );
