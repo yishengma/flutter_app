@@ -20,4 +20,18 @@ mixin Runner {
 
 class SuperMan2 with Flyer,Runner {
 
+
+  //类属性
+  static String courseTime;
+
+  //类方法
+  static void gotoCourse() {
+
+  }
+}
+
+enum Colors {
+  red,
+  blue,
+  black
 }
