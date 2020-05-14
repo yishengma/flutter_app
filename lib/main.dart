@@ -38,19 +38,42 @@ class NewHomePage extends StatelessWidget {
   }
 }
 
+//Widget 是 @immutable注解，即不可变
 
-class NewCenterBody extends StatelessWidget {
+class NewCenterBody extends StatefulWidget {
+
+  @override
+  State createState() {
+    return NewContentBodyState();
+  }
+}
+
+class NewContentBodyState extends State<NewCenterBody> {
+
+  var flag = true;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Hello world",
-        style: TextStyle(
-            fontSize: 30,
-            color: Colors.orange
-        ),
-      ),
+    Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Checkbox(
+                value: flag,
+                onChanged: (value) {
+                  setState(() {
+                    flag = value;
+                  });
+                }),
+            Text(
+              "Hello world",
+              style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.orange
+              ),
+            ),
+          ],
+        )
     );
   }
 }
