@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -13,6 +12,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+//alt + enter 可以将 StatelessWidget 转换为 Statefulwidget
 class NewHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,14 +29,56 @@ class NewHomePage extends StatelessWidget {
 class NewHomeContent extends StatefulWidget {
   final String msg;
 
-  NewHomeContent(this.msg);
+  NewHomeContent(this.msg) {
+    print("执行了 StatefulWidget 的构造方法");
+  }
 
   @override
-  _NewHomeContentState createState() => _NewHomeContentState();
+  _NewHomeContentState createState(){
+    print("执行了 StatefulWidget 的createState方法");
+    return _NewHomeContentState();
+  }
 }
 
 class _NewHomeContentState extends State<NewHomeContent> {
   var _counter = 0;
+
+
+  _NewHomeContentState() {
+    print("执行了 _NewHomeContentState 的构造方法");
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    print("执行了 _NewHomeContentState 的initState方法");
+
+  }
+
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("执行了 _NewHomeContentState 的didChangeDependencies方法");
+
+  }
+
+
+  @override
+  void didUpdateWidget(NewHomeContent oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("执行了 _NewHomeContentState 的didUpdateWidget方法");
+
+  }
+
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("执行了 _NewHomeContentState 的dispose方法");
+
+  }
 
   @override
   Widget build(BuildContext context) {
