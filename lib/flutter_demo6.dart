@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 main() => runApp(NewApp());
@@ -64,3 +65,53 @@ class NewRow extends StatelessWidget {
     );
   }
 }
+
+
+class RowExpanded extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        textBaseline: TextBaseline.ideographic,
+        children: <Widget>[
+          //Flexible
+          //- flex 属性
+          //
+          //空间分配问题
+          //可将剩余空间进行分配
+
+          //Expanded 即 Flexible  fit: FlexFit.tight,
+          //可收缩的
+          //
+          Flexible(
+            fit: FlexFit.tight,
+              child:Container(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class NewStack extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        //stack
+        //默认大小是包括内容
+        //overflow 超出部分如何处理
+        //Positioned
+        //
+      ],
+    );
+  }
+}
+
+
