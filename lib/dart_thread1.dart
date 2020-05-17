@@ -56,3 +56,24 @@ void executeDelayed() {
 
   });
 }
+
+
+//解决两个问题
+// await 必须在 async 中使用
+// async 返回的结果必须是一个future
+
+//语法糖
+//Future 包装 String
+Future getAwaitAsync() async{
+  await sleep(Duration(seconds: 5));
+  return "执行";
+}
+
+
+
+//
+void getData() async{
+  var res1 = await getSyncNetworkData();
+  var res2 = await getSyncNetworkData();
+  void res3 = await getSyncNetworkData();
+}
