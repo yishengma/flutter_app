@@ -186,3 +186,46 @@ class BottomBarItem extends BottomNavigationBarItem {
             ));
 }
 
+
+class TestKey extends StatelessWidget {
+  final GlobalKey<_KeyElementState> globalKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: KeyElement(globalKey),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        globalKey.currentState.widget.name;
+      }),
+    );
+  }
+}
+
+
+class KeyElement extends StatefulWidget {
+  final String name = "KeyElement";
+
+  //有一个构造函数
+  //  /// Initializes [key] for subclasses.
+  //  const StatefulWidget({ Key key }) : super(key: key);
+
+  //Key 的作用标识每一个 Element
+  //在 diff 虚拟 DOM 树的时候，判断是否是同一个 Element
+  //通过比较 key 和 runtimeType
+  //默认是没有key 只有 runtimeType
+  //DOM  全称为“文档对象模型”(Document Object Model)
+  KeyElement(Key key) :super(key: key);
+
+  @override
+  _KeyElementState createState() => _KeyElementState();
+}
+
+class _KeyElementState extends State<KeyElement> {
+  final String name = "_KeyElementState";
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
