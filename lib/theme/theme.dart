@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
@@ -5,6 +7,24 @@ main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    //手机物理分辨率
+    final physicalwidth = window.physicalSize.width;
+
+    //在这里不能获取，因为还没初始化
+    //手机逻辑分辨率
+//    MediaQuery.of(context).size.width;
+
+    //dpr
+    final dpr = window.devicePixelRatio;
+    //
+    final width = physicalwidth / dpr;
+
+
+    //
+
+
+
     //一旦设置主题，某些 widget ，就会直接使用主题的样式
     return MaterialApp(
       title: "Flutter Demo",
