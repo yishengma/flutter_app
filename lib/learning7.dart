@@ -16,3 +16,20 @@
 //
 //
 //// _ 是 dart 区分私有和公共的方式
+
+class Person {
+
+}
+
+//扩展这个类
+extension Person1 on Person {
+
+}
+
+
+//扩展某个类
+extension String1 on String {
+  List<String> split(String split) {
+
+  }
+}

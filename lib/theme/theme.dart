@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp/SizeFit.dart';
 
 main() => runApp(MyApp());
 
@@ -39,8 +40,8 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         //某些 Widget 的主题
         buttonTheme: ButtonThemeData(
-          height: 25,
-          minWidth: 10,
+          height: 25.0.rpx,
+          minWidth: 10.0.px(),
           buttonColor: Colors.yellow,
         ),
         //card

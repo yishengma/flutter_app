@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
-
 //Flutter 使用的单位是 pt 即 pointer
 //iphone6 尺寸是 375 ，dpr 是 2 则分辨率是 750
 //
@@ -47,3 +45,20 @@ class SizeFit {
 
 //三方库
 //flutter screen_util
+
+//为了避免使用方法的可能性
+extension PxDouble on double {
+  double px() {
+    return SizeFit.setPx(this);
+  }
+
+//  double rpx() {
+//    return SizeFit.setRpx(this);
+//  }
+
+  //扩充一个 get 省去括号
+  double get rpx {
+    return SizeFit.setRpx(this);
+
+  }
+}
